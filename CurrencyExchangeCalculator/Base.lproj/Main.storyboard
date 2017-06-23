@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyExchangeCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdd-dM-qQs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Exchange Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKC-EC-F1S">
+                                        <rect key="frame" x="38" y="12" width="298" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hAC-Ai-c1C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.71393407534246578" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VKC-EC-F1S" firstAttribute="centerY" secondItem="Fdd-dM-qQs" secondAttribute="centerY" id="Aeo-nD-fqA"/>
+                                    <constraint firstItem="VKC-EC-F1S" firstAttribute="centerX" secondItem="Fdd-dM-qQs" secondAttribute="centerX" id="MJN-vf-Duk"/>
+                                    <constraint firstAttribute="height" constant="55" id="b9E-A6-Qzc"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="55" id="xZJ-xH-bcp"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hh1-8T-v3F" userLabel="Super Stack View">
+                                <rect key="frame" x="72.5" y="145" width="230" height="130"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MeP-Zi-9YI" userLabel="USD Value View">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMH-cZ-T3P">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUX-Oj-TPB" userLabel="USD Value Text Field">
+                                                <rect key="frame" x="145" y="0.0" width="85" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="85" id="e01-8L-MyH"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ert-qh-42D"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="Upu-rM-dRX"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Sca-Ug-9w2" userLabel="Peso Value Stack View">
+                                        <rect key="frame" x="0.0" y="50" width="230" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ul7-qE-Cac">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9w-ad-rei" userLabel="Peso Value Text Field">
+                                                <rect key="frame" x="145" y="0.0" width="85" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fk4-Zd-H1d"/>
+                                                    <constraint firstAttribute="width" constant="85" id="rSB-1R-3HB"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="nkg-Cx-d5t"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkI-27-5MC">
+                                        <rect key="frame" x="0.0" y="100" width="230" height="30"/>
+                                        <state key="normal" title="Calculate"/>
+                                        <connections>
+                                            <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XrB-S8-UhL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hh1-8T-v3F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YfB-W6-agf"/>
+                            <constraint firstItem="Fdd-dM-qQs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cCs-Qf-uWM"/>
+                            <constraint firstItem="Fdd-dM-qQs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gb3-Fd-59P"/>
+                            <constraint firstAttribute="trailing" secondItem="Fdd-dM-qQs" secondAttribute="trailing" id="iEc-TW-ppw"/>
+                            <constraint firstItem="hh1-8T-v3F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="125" id="rKp-bI-s8i"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dollarTextField" destination="VUX-Oj-TPB" id="jKC-mf-SPj"/>
+                        <outlet property="pesoTextField" destination="D9w-ad-rei" id="9aO-ca-qQB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

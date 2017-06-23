@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var dollarTextField: UITextField!
+    @IBOutlet weak var pesoTextField: UITextField!
+    @IBAction func calculateButton(_ sender: UIButton) {
+        if let dollarAmount = Double(dollarTextField.text!) {
+            let convert:Double = 18.22
+            let pesoAmount:Double = dollarAmount * convert
+            pesoTextField.text = String(format: "%.2f", pesoAmount)
+        }
+        else {
+            pesoTextField.text = ""
+            dollarTextField.text = ""
+        }
+    }
 }
 
